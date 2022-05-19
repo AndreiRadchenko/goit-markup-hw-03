@@ -9,11 +9,14 @@
   --main-text-color: #757575;
   --secondary-text-color: #212121;
   --accent-color: #2196f3;
+  --primary-btn-hover-color: #188ce8;
   --background-color: #ffffff;
   --footer-contacts-color: rgba(255, 255, 255, 0.6);
   --footer-background-color: #2f303a;
   --button-background-color: #f5f4fa;
+  --gallery-border-color: #eeeeee;
 }
+h3,
 p {
   margin: 0;
 }
@@ -30,7 +33,7 @@ body {
   padding: 0 15px;
   margin: 0 auto;
   /* background-color: aqua; */
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 .visually-hidden {
   position: absolute;
@@ -46,11 +49,12 @@ body {
 }
 /* ====================HEADER==================== */
 .page-header {
-  border-bottom: 1px solid #ececec;
   padding-top: 9px;
   padding-bottom: 9px;
+  border-bottom: 1px solid #ececec;
+  /* background-color: teal; */
 }
-.header-flex {
+.container.header-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,6 +69,7 @@ body {
   padding: 0;
 }
 .link {
+  display: inline-block;
   text-decoration: none;
   padding: 15px 0;
 }
@@ -173,6 +178,10 @@ button {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   padding: 8px 30px;
 }
+.button.primary:hover,
+.button.primary:focus {
+  background-color: var(--primary-btn-hover-color);
+}
 .button.secondary {
   background-color: var(--button-background-color);
   color: var(--secondary-text-color);
@@ -197,7 +206,9 @@ button {
   background-color: var(--background-color);
 }
 .section-title {
-  margin: 0px auto 50px;
+  /* margin: 0px auto 50px; */
+  margin-top: 0;
+  margin-bottom: 50px;
   color: var(--secondary-text-color);
   font-size: 36px;
   line-height: 1.16;
@@ -208,6 +219,7 @@ button {
 .benefits {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 0;
 }
 .benefits-item {
   /* flex-basis: calc((100%-90px) / 4); */
@@ -226,15 +238,37 @@ button {
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
-/* .list p {
-  margin: 0px auto 10px;
-} */
+/* =================== SPECIALIZATIO SECTION ====== */
+.specialization {
+  display: flex;
+  justify-content: space-between;
+}
+.img-block {
+  display: block;
+}
+.specialization-item + .specialization-item {
+  margin-left: 30px;
+}
 /* =================== COMPANY SECTION ============= */
-li:last-child p {
-  margin: 0;
+.members.list {
+  display: flex;
+  justify-content: space-between;
+}
+.members-item + .members-item {
+  margin-left: 30px;
+}
+.members-item {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 .section-company {
   background-color: var(--button-background-color);
+}
+.member-text {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: var(--background-color);
 }
 .members-title {
   margin: 0px auto 10px;
@@ -251,25 +285,39 @@ li:last-child p {
   text-align: center;
 }
 
-/* +++++++++++tests section+++++++++++++++++++++ */
-.gallery-image {
-  background-color: chocolate;
+/* ================== GALLERY SECTION ============*/
+.secondary-button.list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }
-.inline-modified {
-  display: inline;
-  margin-bottom: 12px;
+.filter-item + .filter-item {
+  margin-left: 8px;
 }
-.inline-modified:last-child {
-  /* margin-bottom: 0px; */
-  background-color: aqua;
+.gallery.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.button-filter {
-  display: inline-block;
-  border: 3px solid rgb(129, 130, 209);
-  margin: 0 auto;
+.gallery-item {
+  max-width: 370px;
+  border: 1px solid var(--gallery-border-color);
+  margin-right: 30px;
+  margin-bottom: 30px;
 }
-/* +++++++++++++++++++++++++++++++++++++++++++++ */
+.gallery-item:nth-child(3n) {
+  margin-right: 0px;
+}
+.gallery-item:nth-last-child(-n + 3) {
+  margin-bottom: 0px;
+}
+.gallery-text {
+  padding: 20px 24px;
+  max-width: 370px;
+}
 .gallery-title {
+  margin-bottom: 4px;
+
   color: var(--secondary-text-color);
   font-size: 18px;
   line-height: 2;
@@ -279,15 +327,25 @@ li:last-child p {
   font-size: 16px;
   line-height: 1.87;
 }
-/* footer style */
+/* ==================== FOOTER ==================== */
 .footer {
   background-color: var(--footer-background-color);
+}
+.footer .container {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.footer.logo.link {
+  /* display: inline-block; */
+  margin-bottom: 20px;
+  padding: 0;
 }
 .footer-contacts {
   /* font-weight: 400; */
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+  font-style: normal;
 }
 .footer-adress {
   color: var(--background-color);
@@ -295,6 +353,16 @@ li:last-child p {
 .footer-contact {
   color: var(--footer-contacts-color);
 }
-
-/* ====================HEADER==================== */
-/* ====================HEADER==================== */
+.footer-contact.link,
+.footer-adress.link {
+  padding: 0px;
+}
+.footer-contacts.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 81px;
+}
+.footer-contact-item:first-child {
+  padding-top: 0;
+}
