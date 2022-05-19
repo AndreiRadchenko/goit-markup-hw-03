@@ -22,8 +22,44 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  /* background-color: aqua; */
+  outline: 1px solid red;
+}
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+/* ====================HEADER==================== */
+.page-header {
+  border-bottom: 1px solid #ececec;
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-flex {
+  display: flex;
+  align-items: center;
+}
 .list {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .link {
   text-decoration: none;
@@ -46,8 +82,13 @@ body {
   color: var(--background-color);
 }
 /* nav style */
+.site-nav {
+  margin-left: 93px;
+}
 .site-nav,
 .header-contacts {
+  display: flex;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -58,6 +99,14 @@ body {
 }
 .site-nav .link.current {
   color: var(--accent-color);
+}
+.site-nav .list-item,
+.header-contacts .list-item {
+  margin-left: 50px;
+}
+.site-nav .list-item:first-child,
+.header-contacts .list-item:first-child {
+  margin-left: 0px;
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
@@ -75,6 +124,7 @@ body {
 .footer-adress.link:focus {
   color: var(--accent-color);
 }
+/* ==========================HERO======================= */
 /* hero sections style */
 .hero {
   background-color: var(--footer-background-color);
@@ -82,12 +132,13 @@ body {
   letter-spacing: 0.06em;
 }
 .hero-title {
+  margin: 0 auto 30px;
   color: var(--background-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   text-transform: uppercase;
+  outline: 1px solid tomato;
 }
 button {
   font-family: inherit;
@@ -96,6 +147,10 @@ button {
 .button {
   background-color: var(--button-background-color);
   color: var(--secondary-text-color);
+  display: inline-block;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 .button.primary {
   background-color: var(--accent-color);
@@ -103,9 +158,11 @@ button {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
-  align-items: center;
-  text-align: center;
   letter-spacing: 0.06em;
+  min-width: 200px;
+  height: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 10px 32px;
 }
 .button.secondary {
   background-color: var(--button-background-color);
@@ -113,19 +170,23 @@ button {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
-  text-align: center;
   letter-spacing: 0.03em;
+  padding: 6px 22px;
+  min-width: 70px;
 }
 .button.secondary:hover,
 .button.secondary:focus {
   background-color: var(--accent-color);
   color: var(--background-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 /* section style */
 .section {
   background-color: var(--background-color);
 }
 .section-title {
+  margin: 0px auto 50px;
   color: var(--secondary-text-color);
   font-size: 36px;
   line-height: 1.16;
@@ -136,6 +197,7 @@ button {
   background-color: var(--button-background-color);
 }
 .members-title {
+  margin: 0px auto 10px;
   color: var(--secondary-text-color);
   font-weight: 500;
   font-size: 16px;
@@ -149,12 +211,37 @@ button {
   text-align: center;
 }
 .benefits-title {
+  margin: 0px auto 10px;
   color: var(--secondary-text-color);
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
+.list p {
+  margin: 0px auto 10px;
+}
+li:last-child p {
+  margin: 0;
+}
+/* +++++++++++tests section+++++++++++++++++++++ */
+.gallery-image {
+  background-color: chocolate;
+}
+.inline-modified {
+  display: inline;
+  margin-bottom: 12px;
+}
+.inline-modified:last-child {
+  /* margin-bottom: 0px; */
+  background-color: aqua;
+}
+.button-filter {
+  display: inline-block;
+  border: 3px solid rgb(129, 130, 209);
+  margin: 0 auto;
+}
+/* +++++++++++++++++++++++++++++++++++++++++++++ */
 .gallery-title {
   color: var(--secondary-text-color);
   font-size: 18px;
@@ -181,3 +268,6 @@ button {
 .footer-contact {
   color: var(--footer-contacts-color);
 }
+
+/* ====================HEADER==================== */
+/* ====================HEADER==================== */
