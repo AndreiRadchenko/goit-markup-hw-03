@@ -245,6 +245,8 @@ button {
 }
 .img-block {
   display: block;
+  width: 100%;
+  height: auto;
 }
 .specialization-item + .specialization-item {
   margin-left: 30px;
@@ -301,7 +303,7 @@ button {
 }
 .gallery-item {
   max-width: 370px;
-  border: 1px solid var(--gallery-border-color);
+  border-bottom: 1px solid var(--gallery-border-color);
   margin-right: 30px;
   margin-bottom: 30px;
 }
@@ -330,8 +332,6 @@ button {
 /* ==================== FOOTER ==================== */
 .footer {
   background-color: var(--footer-background-color);
-}
-.footer .container {
   padding-top: 60px;
   padding-bottom: 60px;
 }
